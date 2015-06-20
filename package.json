@@ -1,0 +1,15 @@
+{
+  "name": "node_mongo_goat",
+  "version": "1.0.0",
+  "description": "Example code for implementing a Node server with MondgoDB.",
+  "main": "init.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jose Collas",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.12.4",
+    "mongodb": "^2.0.34"
+  }
+}

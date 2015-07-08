@@ -1,6 +1,6 @@
-/* init.js : Jose Collas 6.2015 */
+/* goatstone/server/one.js : Jose Collas 7.2015 */
 var express = require('express');
-var Collection = require('./src/goatstone/collection/collection');
+var Collection = require('/home/goat/projects/node_mongo_goat/src/goatstone/collection/collection');
 
 var app = express();
 var collection = new Collection();

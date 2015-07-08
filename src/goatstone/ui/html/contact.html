@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+	<style type="text/css">
+	div{
+		margin: auto ;
+		width: 450px;
+		background-color: #ccc;
+		padding: 22px;
+		border-radius: 0px 0px 30px 30px;
+	}
+	label{
+		width: 100%;
+		padding: 3px;
+	}
+	input[type=text], textarea {
+		widows: 100%;
+		border-radius: 7px;
+	}
+   textarea {
+		width: 100%;
+		border-radius: 12px;
+	}
+	input[type=submit]{
+		background-color: #f99;
+		float: right;	
+		margin: 6px;	
+		padding: 6px;
+		border-radius: 7px;
+	}
+	</style>
+</head>
+<body>
+<div>
+	<h1>Contact </h1> 		
+	<form method="POST" action="/log" class="form-horizontal">
+	<label>
+	Name:
+	<input name="name" type="text" class="form-control">		
+	</label>
+	<label>
+	Email:
+	<input name="email" type="text" size="35" class="form-control">
+	</label>
+	<label>
+	Message:
+	<textarea name="message" rows="5">xxx</textarea>
+	</label>
+	<input type="submit" value="Send A Message.">
+	</form>
+	<br clear="both">
+</div>
+<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

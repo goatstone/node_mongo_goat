@@ -3,7 +3,7 @@ function Display(){}
 Display.prototype.list = function(items, res){
   var display = [];
   display = items.map(function(e, i){
-    return '<p>' + i + ' : ' + e.message + '</p>';
+    return '<p>' + i + ' : ' + e.name + " : "  + e.message + '</p>';
   });
   if(res){
     console.log('http mode : ' );

@@ -3,9 +3,10 @@ var mongo = require('mongodb');
 var Db = mongo.Db,
 	BSON = mongo.BSONPure,
 	mongoClient = mongo.MongoClient;
-function collection(){
-}
-collection.prototype.get = function(callback){
+var config = require('./config');
+var urlMLab = 'mongodb://goat:' + config.mongoLabPass + '@ds049548.mongolab.com:49548/goatstone_home';
+function Collection(){}
+Collection.prototype.get = function(callback){
 	mongoClient.connect(urlMLab, function(e, db){
 		db.collection('log', function(error, collection){
 		var c = collection.find().limit(24).sort({timestamp:-1}).toArray(function(err, items){
@@ -14,11 +15,11 @@ collection.prototype.get = function(callback){
 		});	
 	});
 };
-collection.prototype.add = function(obj){
+Collection.prototype.add = function(obj){
 	mongoClient.connect(urlMLab, function(e, db){
 		db.collection('log', function(error, collection){
 			collection.insert(obj);
 		});
 	});
 };
-module.exports = collection;
+module.exports = Collection;

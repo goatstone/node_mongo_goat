@@ -1,16 +1,30 @@
 /* goatstone/collection/collection.js : Jose Collas : 7.2015 */
 var mongo = require('mongodb');
+var Server = mongo.Server,
+	Db = mongo.Db,
+	BSON = mongo.BSONPure;
 
 function collection(){
-	this.db;
+	var server = new Server('localhost','27017',{auto_reconnect:true});
+	var db = new Db('goat', server);
+	this.db = db;
 }
-collection.prototype.get = function(){
-	console.log('get..');
+collection.prototype.get = function(callback){
+	this.db.open(function(err, db){
+		if(err){throw 'db error';}
+		db.collection('log', function(error, collection){
+		var c = collection.find().limit(12).sort({timestamp:-1}).toArray(function(err, items){
+				callback(items);
+				db.close();
+			});	
+		});	
+	});
 };
 collection.prototype.add = function(){
 
 };
 module.exports = collection;
+
 /*
   var c = getLatest(
 	function(err, collection){

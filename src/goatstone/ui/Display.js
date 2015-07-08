@@ -7,7 +7,7 @@ Display.prototype.list = function(items, res){
   });
   if(res){
     console.log('http mode : ' );
-    res.send(  display.join(' XX'));
+    res.send(  display.join(''));
   }
   else{
     console.log('non http mode..', display.join('') );

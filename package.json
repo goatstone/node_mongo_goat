@@ -9,7 +9,9 @@
   "author": "Jose Collas",
   "license": "ISC",
   "devDependencies": {
+    "bootstrap": "^3.3.5",
     "express": "^4.12.4",
-    "mongodb": "^2.0.34"
+    "mongodb": "^2.0.34",
+    "node-inspector": "^0.10.2"
   }
 }
